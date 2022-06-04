@@ -1,0 +1,44 @@
+.sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 21%;
+    min-height: 100vh;
+    border-right: var(--border);
+}
+
+.sideBar__header {
+    margin: 3rem 5.4rem;
+    margin-bottom: 5.4rem;
+    padding-top: 1rem;
+    height: 4.3rem;
+}
+
+.sideBar__header a {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 3.4rem;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.sideBar__header a span {
+    
+    color: var(--color-primary);
+}
+
+.sideBar__navs {
+    padding-top: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .sideBar {
+        width: 100%;
+        min-height: 100vh;
+        border-right: var(--border);
+        transform: translateX(-100%);
+    }
+}
+    

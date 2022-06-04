@@ -1,0 +1,11 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 21%;
+    width: 79%;
+}
+
+.body__content {
+    flex: 1;
+}

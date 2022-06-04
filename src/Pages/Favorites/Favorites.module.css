@@ -1,0 +1,38 @@
+.favorite {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+}
+
+.favorite__content {
+    width: 100%;
+    padding: 4.5rem;
+}
+
+.favorite__content_header {
+    margin-top: 11.4rem;
+
+}
+
+.favorite__content_header h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 3.4rem;
+    letter-spacing: .1rem;
+    color: var(--color-dark-1);
+}
+
+.favorite__developers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 7.7rem;
+    gap: 2.5rem;
+}
+
+.favorite__developers_card {
+    width: 21%;
+}

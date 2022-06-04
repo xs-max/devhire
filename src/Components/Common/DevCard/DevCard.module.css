@@ -1,0 +1,106 @@
+.devCard {
+    position: relative;
+    width: 100%;
+    height: 22.4rem;
+    background: var(--color-white);
+    border-radius: 1rem;
+}
+
+.devCard__cover {
+    width: 100%;
+    height: 13.9rem;
+    padding: .5rem;
+}
+
+.devCard__cover img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.devCard__favorite {
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    right: 1.3rem;
+    top: 1.4rem;
+    background: var(--color-grey);
+    border-radius: 1rem;
+    padding: 1.1rem 1rem;
+}
+
+.favor {
+    background: var(--color-white);
+}
+
+.devCard__favorite_heart {
+    width: 1.5rem;
+    height: 1.249rem;
+}
+
+.favor_heart path {
+    fill: var(--color-red);
+}
+
+.devCard__avatar {
+    position: absolute;
+    width: 4.4rem;  
+    height: 4.4rem;
+    background: var(--color-white);
+    padding: .1rem;
+    border-radius: 50%;
+    top: 11.2rem;
+    left: 1.3rem;
+}
+
+.devCard__avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.devCard__footer {
+    margin: 3.1rem 1.3rem 0 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.devCard__footer_name h5 {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--color-dark-2);
+}
+
+.devCard__footer_name p {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.0rem;
+    line-height: 1.5rem;
+    color: rgba(0, 0, 0, 0.49);
+}
+
+.devCard__footer_cta a {
+    text-decoration: none;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 2.6rem;
+    color: #1D9BF0;
+}
+
+@media only screen and (max-width: 600px) {
+    .devCard {
+        position: relative;
+        width: 85%;
+        height: 23.4rem;
+        background: var(--color-white);
+        border-radius: 1rem;
+        margin: 0 auto;
+    }
+}
