@@ -4,8 +4,14 @@
     justify-content: space-between;
     margin-left: 21%;
     width: 79%;
+    min-height: 100%;
+    
 }
 
 .body__content {
     flex: 1;
+    height: 100%;
+    /* overflow-y: scroll; */
 }
+
+

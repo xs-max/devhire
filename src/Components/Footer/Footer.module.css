@@ -1,4 +1,5 @@
 .footer {
+    position: relative;
     width: 100%;
     height: 4.2rem;
     margin-bottom: 4rem;
@@ -6,8 +7,41 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 5rem;
+    overflow-x: hidden;
 }
 
-.footer__copy {
+.footer__copy p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--color-grey-light);
+}
 
+.footer__currency {
+    width: 16.7rem;
+    height: 4.2rem;
+    padding: 0 1.5rem;
+    border: .1rem solid var(--color-grey-light);
+    border-radius: .6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer__currency_flag {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.footer__currency_flag p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: var(--color-grey-light);
 }

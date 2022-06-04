@@ -1,7 +1,7 @@
 .layout {
     position: relative;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 2160px;
     margin: 0 auto;
 }

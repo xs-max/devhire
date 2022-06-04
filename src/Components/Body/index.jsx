@@ -1,4 +1,5 @@
 import React, { Children } from 'react'
+import Footer from '../Footer'
 import classes from './Body.module.css'
 
 const Body = ({children}) => {
@@ -7,6 +8,7 @@ const Body = ({children}) => {
         <div className={classes.body__content}>
             {children}
         </div>
+        <Footer />
     </div>
   )
 }

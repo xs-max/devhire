@@ -1,10 +1,17 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import DevCard from '../../Components/Common/DevCard';
 import classes from './Home.module.css'
+import { fetchDevData } from '../../Store/slices/developersSlice';
 
 const Home = () => {
 
-    const cards = new Array(12).fill(0);
+    const dispatch = useDispatch();
+    const {loading, developers} = useSelector(state => state.developer);
+    useEffect(() => {
+        dispatch(fetchDevData())
+    }, [])
 
   return (
     <div className={classes.home}>
@@ -13,7 +20,7 @@ const Home = () => {
                   <h2>Hire Top Developers</h2>
               </div>
               <div className={classes.home__developers} >
-                    {cards.map((item, index) => (
+                    {developers.map((item, index) => (
                         <div key={index} className={classes.home__developers_card}>
                             <DevCard />
                         </div>

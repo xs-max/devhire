@@ -4,22 +4,23 @@ import Pic from '../../../Assets/image2.png'
 import Avatar from '../../../Assets/Ellipse1.png'
 import {ReactComponent as Heart} from '../../../Assets/Heart-nostroke.svg'
 
-const DevCard = () => {
+const DevCard = ({cover, isFavorite, avatar, name, price, currency}) => {
+
   return (
     <div className={classes.devCard}>
         <div className={classes.devCard__cover}>
-            <img src={Pic} alt="cover image" />
+            <img src={cover} alt="cover image" />
         </div>
-        <div className={classes.devCard__favorite}>
-              <Heart className={classes.devCard__favorite_heart} />
+        <div className={`${classes.devCard__favorite} ${isFavorite ? classes.favor : ''}`}>
+              <Heart className={`${classes.devCard__favorite_heart} ${isFavorite ? classes.favor_heart : ''}`} />
         </div>
         <div className={classes.devCard__avatar}>
-            <img src={Avatar} alt="cover image" />
+            <img src={avatar} alt="cover image" />
         </div>
         <div className={classes.devCard__footer}>
             <div className={classes.devCard__footer_name}>
-                <h5>Wale Davies</h5>
-                <p>&#8358;30,000</p>
+                <h5>{name}</h5>
+                  <p>{currency || '₦'}{price}</p>
             </div>
             <div className={classes.devCard__footer_cta}>
                 <a href='#'>Hire</a>
