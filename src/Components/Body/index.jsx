@@ -7,11 +7,18 @@ import { fetchDevData } from '../../Store/slices/developersSlice'
 import { useDispatch } from 'react-redux'
 
 const Body = ({children}) => {
+
+    const [isFetched, setIsFetched] = useState(false);
     const [showOptions, setShowOptions] = useState(false);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchDevData())
+        if(!isFetched) {
+            dispatch(fetchDevData())
+            setIsFetched(true);
+        }else {
+            return;
+        }
     }, [dispatch])
 
   return (
