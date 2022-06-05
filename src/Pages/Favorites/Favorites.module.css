@@ -58,6 +58,10 @@
         width: 100%;
     }
 
+    .favorite__developers h2 {
+    font-size: 3.2rem;
+}
+
     .favorite {
         width: 100%;
         margin-left: 0;

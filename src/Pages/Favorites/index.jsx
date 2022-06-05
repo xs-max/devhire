@@ -21,7 +21,7 @@ const Favorite = () => {
                     <h2>Hire Top Developers</h2>
                 </div>
                 <div className={classes.favorite__developers} >
-                    {cards.length == 0 ? <h1>"No Favorite Developer Yet"</h1>
+                    {cards.length == 0 ? <h2>"No Favorite Developer Yet"</h2>
                     :
                     cards.map((item, index) => (
                         <div key={index} className={classes.favorite__developers_card}>
