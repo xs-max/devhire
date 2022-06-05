@@ -21,7 +21,7 @@ const Favorite = () => {
         <div className={classes.favorite}>
             <div className={classes.favorite__content}>
                 <div className={classes.favorite__content_header}>
-                    <h2>Hire Top Developers</h2>
+                    <h2>Favorites</h2>
                 </div>
                 <div className={`${classes.favorite__developers} ${loading ? classes.loader : ''}`} >
                     { loading ? <PuffLoader  color={'#1D9BF0'} loading={loading}  size={250} />
