@@ -33,6 +33,16 @@
     gap: 2.5rem;
 }
 
+.favorite__developers h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 3.4rem;
+    letter-spacing: .1rem;
+    color: var(--color-dark-2);
+}
+
 .favorite__developers_card {
     width: 21%;
 }

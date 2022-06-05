@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './DevCard.module.css'
 import Pic from '../../../Assets/image2.png'
 import Avatar from '../../../Assets/Ellipse1.png'
 import {ReactComponent as Heart} from '../../../Assets/Heart-nostroke.svg'
 
-const DevCard = ({cover, isFavorite, avatar, name, price, currency}) => {
+
+const DevCard = ({cover, isFavorite, avatar, name, price, currency, makeFavorites, id}) => {
+
+
+    const addToFavorites = (id) => {
+        makeFavorites(id);
+    }
 
   return (
     <div className={classes.devCard}>
         <div className={classes.devCard__cover}>
             <img src={cover} alt="cover image" />
         </div>
-        <div className={`${classes.devCard__favorite} ${isFavorite ? classes.favor : ''}`}>
+        <div onClick={() => addToFavorites(id)} className={`${classes.devCard__favorite} ${isFavorite ? classes.favor : ''}`}>
               <Heart className={`${classes.devCard__favorite_heart} ${isFavorite ? classes.favor_heart : ''}`} />
         </div>
         <div className={classes.devCard__avatar}>

@@ -4,15 +4,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import numeral from "numeral";
 import DevCard from '../../Components/Common/DevCard';
 import classes from './Home.module.css'
-import { fetchDevData } from '../../Store/slices/developersSlice';
+import { makeDevFavorite } from '../../Store/slices/developersSlice';
 
 const Home = () => {
 
     const dispatch = useDispatch();
-    const {loading, developers} = useSelector(state => state.developer);
-    useEffect(() => {
-        dispatch(fetchDevData())
-    }, [])
+    const {loading, developers, favorites} = useSelector(state => state.developer);
+    const { currentCurrency, rate } = useSelector(state => state.currency);
+
+
+  
+    const makeFavorite = (dev) => {
+        dispatch(makeDevFavorite({dev}))
+    }
 
   return (
     <div className={classes.home}>
@@ -23,7 +27,7 @@ const Home = () => {
               <div className={classes.home__developers} >
                     {developers.map((item, index) => (
                         <div key={index} className={classes.home__developers_card}>
-                            <DevCard avatar={item.avatar} cover={item.service_photo} name={item.display_name} price={numeral(+item.starting_from).format('0,0')} />
+                            <DevCard id={item.profile_id} avatar={item.avatar} cover={item.service_photo} name={item.display_name} price={numeral(+item.starting_from * (rate || 1)).format('0,0.00')} isFavorite={favorites.includes(item.profile_id) ? true : false} currency={currentCurrency?.symbol} makeFavorites={makeFavorite} />
                            
                         </div>
                     ))}

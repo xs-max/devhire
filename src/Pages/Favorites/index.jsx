@@ -1,10 +1,14 @@
 import React from 'react'
+import numeral from "numeral";
+import { useSelector } from 'react-redux';
 import DevCard from '../../Components/Common/DevCard';
 import classes from './Favorites.module.css'
 
 const Favorite = () => {
 
-    const cards = new Array(3).fill(0);
+    const {developers, loading, favorites} = useSelector(state => state.developer);
+    const { currentCurrency, rate } = useSelector(state => state.currency);
+    const cards = developers.filter(item => favorites.includes(item.profile_id));
 
     return (
         <div className={classes.favorite}>
@@ -13,9 +17,11 @@ const Favorite = () => {
                     <h2>Hire Top Developers</h2>
                 </div>
                 <div className={classes.favorite__developers} >
-                    {cards.map((item, index) => (
+                    {cards.length == 0 ? <h1>"No Favorite Developer Yet"</h1>
+                    :
+                    cards.map((item, index) => (
                         <div key={index} className={classes.favorite__developers_card}>
-                            <DevCard />
+                            <DevCard id={item.profile_id} avatar={item.avatar} cover={item.service_photo} name={item.display_name} price={numeral(+item.starting_from * (rate || 1)).format('0,0.00')} isFavorite={favorites.includes(item.profile_id) ? true : false} currency={currentCurrency?.symbol} />
                         </div>
                     ))}
                 </div>

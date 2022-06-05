@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 import axios from 'axios';
 import {DEV} from '../../Constants/Base'
 
@@ -7,19 +7,33 @@ export const developersSlice = createSlice({
   initialState: {
     loading: true,
     developers: [],
+    favorites: [],
   },
   reducers: {
     getDevelopers: (state, action) => {
       state.developers = [...action.payload.data];
+      const favorites = localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : [];
+      state.favorites = [...favorites];
       state.loading = false;
     },
     getDevelopersLoading: (state, action) => {
       state.loading = action.payload.loading;
     },
+    makeDevFavorite: (state, action) => {
+      const favoriteDev = current(state.developers).find(item => item.profile_id === action.payload.dev);
+      state.favorites.push(favoriteDev.profile_id);
+      if(localStorage.getItem('favorites')) {
+        const favorites = JSON.parse(localStorage.getItem('favorites'));
+        favorites.push(favoriteDev.profile_id);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+      }else {
+        localStorage.setItem('favorites', JSON.stringify([favoriteDev.profile_id]));
+      }
+    }
   },
 });
 
-export const { getDevelopers, getDevelopersLoading } = developersSlice.actions
+export const { getDevelopers, getDevelopersLoading, makeDevFavorite } = developersSlice.actions
 
 export const fetchDevData =  () => {
     return async (dispatch) => {

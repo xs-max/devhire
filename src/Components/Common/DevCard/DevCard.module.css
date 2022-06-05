@@ -27,6 +27,7 @@
     background: var(--color-grey);
     border-radius: 1rem;
     padding: 1.1rem 1rem;
+    cursor: pointer;
 }
 
 .favor {
