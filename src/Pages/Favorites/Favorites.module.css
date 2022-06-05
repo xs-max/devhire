@@ -32,7 +32,7 @@
     gap: 2.5rem;
 }
 
-.favorite__developers h1 {
+.favorite__developers h2 {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -41,6 +41,7 @@
     letter-spacing: .1rem;
     color: var(--color-dark-2);
 }
+
 
 .loader {
     display: flex;
@@ -56,6 +57,10 @@
     .favorite__developers_card {
         width: 30%;
     }
+
+    .favorite__developers h2 {
+        font-size: 3rem;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -64,8 +69,8 @@
     }
 
     .favorite__developers h2 {
-    font-size: 2rem;
-}
+        font-size: 2rem;
+    }
 
     .favorite {
         width: 100%;
