@@ -10,6 +10,12 @@
     padding: 4.5rem;
 }
 
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .home__content_header {
     margin-top: 11.4rem;
 

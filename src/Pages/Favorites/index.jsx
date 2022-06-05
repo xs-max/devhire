@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import DevCard from '../../Components/Common/DevCard';
 import classes from './Favorites.module.css'
 import { makeDevFavorite } from '../../Store/slices/developersSlice';
+import { PuffLoader } from 'react-spinners';
 
 const Favorite = () => {
 
@@ -26,8 +27,10 @@ const Favorite = () => {
                 <div className={classes.favorite__content_header}>
                     <h2>Hire Top Developers</h2>
                 </div>
-                <div className={classes.favorite__developers} >
-                    {cards.length == 0 ? <h2>"No Favorite Developer Yet"</h2>
+                <div className={`${classes.favorite__developers} ${loading ? classes.loader : ''}`} >
+                    { loading ? <PuffLoader  color={'#1D9BF0'} loading={loading}  size={250} />
+                    :
+                    cards.length == 0 ? <h2>"No Favorite Developer Yet"</h2>
                     :
                     cards.map((item, index) => (
                         <div key={index} className={classes.favorite__developers_card}>

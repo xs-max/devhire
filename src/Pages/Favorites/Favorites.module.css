@@ -43,6 +43,12 @@
     color: var(--color-dark-2);
 }
 
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .favorite__developers_card {
     width: 21%;
 }
