@@ -14,7 +14,7 @@ const SideBar = ({showSideBar, setShowSideBar}) => {
   return (
     <div className={`${classes.sideBar} ${showSideBar ? classes.show : ''}` }>
         <div className={classes.sideBar__header}>
-            <Link className={classes.logo} to="/">Dev<span>Hire</span></Link>
+              <Link  onClick={() => setShowSideBar(!showSideBar)} className={classes.logo} to="/">Dev<span>Hire</span></Link>
               <FaTimes className={classes.close} onClick={() => setShowSideBar(!showSideBar)} size={32} />
         </div>
         <div className={classes.sideBar__navs}>
