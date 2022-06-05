@@ -103,6 +103,7 @@
         background: var(--color-white);
         border-radius: 1rem;
         margin: 0 auto;
+        margin-bottom: 1.5rem;
     }
 
     .devCard__cover {
