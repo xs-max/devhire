@@ -9,7 +9,7 @@ import { makeDevFavorite } from '../../Store/slices/developersSlice';
 const Home = () => {
 
     const dispatch = useDispatch();
-    const {loading, developers, favorites} = useSelector(state => state.developer);
+    const {developers, favorites} = useSelector(state => state.developer);
     const { currentCurrency, rate } = useSelector(state => state.currency);
 
     useEffect(() => {
