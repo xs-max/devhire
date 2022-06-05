@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import classes from './Footer.module.css'
 import Nigeria from '../../Assets/nigeria.png'
 import {ReactComponent as CarretDown } from '../../Assets/carretdown.svg'
-import CurrencyOption from '../Common/CurrencyOption'
 
-const Footer = () => {
+const Footer = ({setShowOptions, showOptions}) => {
 
-    const [showOptions, setShowOptions] = useState(false);
+    
 
     const openOptions = () => {
         setShowOptions(!showOptions);
@@ -14,7 +13,7 @@ const Footer = () => {
 
   return (
     <div className={classes.footer}>
-        <CurrencyOption show={showOptions} setShowOptions={setShowOptions}/>
+        
         <div className={classes.footer__copy}>
             <p>© 2022 DEVHIRE</p>
         </div>

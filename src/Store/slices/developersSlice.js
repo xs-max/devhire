@@ -19,7 +19,6 @@ export const developersSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { getDevelopers, getDevelopersLoading } = developersSlice.actions
 
 export const fetchDevData =  () => {
