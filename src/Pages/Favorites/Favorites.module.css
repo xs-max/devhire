@@ -46,3 +46,24 @@
 .favorite__developers_card {
     width: 21%;
 }
+
+@media only screen and (max-width: 1024px) {
+    .favorite__developers_card {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .favorite__developers_card {
+        width: 100%;
+    }
+
+    .favorite {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .favorite__content_header {
+        text-align: center;
+    }
+}

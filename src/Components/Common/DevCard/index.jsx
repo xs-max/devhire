@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
 import classes from './DevCard.module.css'
-import Pic from '../../../Assets/image2.png'
-import Avatar from '../../../Assets/Ellipse1.png'
 import {ReactComponent as Heart} from '../../../Assets/Heart-nostroke.svg'
 
 

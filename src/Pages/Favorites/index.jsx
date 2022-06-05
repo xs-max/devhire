@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import numeral from "numeral";
 import { useSelector } from 'react-redux';
 import DevCard from '../../Components/Common/DevCard';
@@ -9,6 +9,10 @@ const Favorite = () => {
     const {developers, loading, favorites} = useSelector(state => state.developer);
     const { currentCurrency, rate } = useSelector(state => state.currency);
     const cards = developers.filter(item => favorites.includes(item.profile_id));
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <div className={classes.favorite}>

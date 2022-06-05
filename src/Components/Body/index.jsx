@@ -12,7 +12,7 @@ const Body = ({children}) => {
 
     useEffect(() => {
         dispatch(fetchDevData())
-    }, [])
+    }, [dispatch])
 
   return (
     <div className={classes.body}>

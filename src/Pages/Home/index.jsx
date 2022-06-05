@@ -12,7 +12,9 @@ const Home = () => {
     const {loading, developers, favorites} = useSelector(state => state.developer);
     const { currentCurrency, rate } = useSelector(state => state.currency);
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
   
     const makeFavorite = (dev) => {
         dispatch(makeDevFavorite({dev}))

@@ -35,15 +35,13 @@
 
 .home__developers_card {
     width: 21%;
-    animation: grow 2s ease;
 }
 
-@keyframes grow {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
+
+
+@media only screen and (max-width: 1024px) {
+    .home__developers_card {
+        width: 30%;
     }
 }
 
@@ -58,7 +56,6 @@
     }
 
     .home__content_header {
-        margin: 0 auto;
         text-align: center;
     }
 }

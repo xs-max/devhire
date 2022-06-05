@@ -61,3 +61,9 @@
 .navItem__nav_link span.active {
     color: var(--color-dark-1);
 }
+
+@media only screen and (max-width: 600px) {
+    .navItem {
+        align-items: center;
+    }
+}

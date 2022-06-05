@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import classes from './CurrencyOption.module.css';
-import Nigeria from '../../../Assets/nigeria.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCurrency, fetchCurData } from '../../../Store/slices/currencySlice';
 
 const CurrencyOption = ({show, setShowOptions}) => {
 
-    const { currencies, netConversions } = useSelector(state => state.currency);
+    const { currencies} = useSelector(state => state.currency);
     const dispatch = useDispatch();
 
     useEffect(() => {

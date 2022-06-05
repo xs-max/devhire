@@ -98,10 +98,16 @@
 @media only screen and (max-width: 600px) {
     .devCard {
         position: relative;
-        width: 85%;
-        height: 23.4rem;
+        width: 80%;
+        height: 24.4rem;
         background: var(--color-white);
         border-radius: 1rem;
         margin: 0 auto;
     }
+
+    .devCard__cover {
+        width: 100%;
+        padding: .5rem;
+    }
+
 }

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import classes from './Footer.module.css'
-import Nigeria from '../../Assets/nigeria.png'
 import {ReactComponent as CarretDown } from '../../Assets/carretdown.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCurData } from '../../Store/slices/currencySlice'

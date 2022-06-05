@@ -1,0 +1,39 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 2rem;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-bg);
+    z-index: 20;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.header__logo {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.header__logo .logo {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 3.4rem;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.header__logo .logo span {
+    
+    color: var(--color-primary);
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        display: flex;
+    }
+}

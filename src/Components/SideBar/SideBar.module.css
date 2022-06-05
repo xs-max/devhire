@@ -14,7 +14,7 @@
     height: 4.3rem;
 }
 
-.sideBar__header a {
+.sideBar__header .logo {
     font-style: normal;
     font-weight: 700;
     font-size: 3.2rem;
@@ -24,21 +24,51 @@
     color: var(--color-dark);
 }
 
-.sideBar__header a span {
+.sideBar__header .logo span {
     
     color: var(--color-primary);
+}
+
+.close {
+    display: none;
 }
 
 .sideBar__navs {
     padding-top: 3rem;
 }
 
+@media only screen and (max-width: 1024px) {
+    .sideBar {
+        width: 30%;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .sideBar {
         width: 100%;
-        min-height: 100vh;
-        border-right: var(--border);
         transform: translateX(-100%);
+        background: var(--color-bg);
+        z-index: 30;
+        transition: all .3s;
+
+    }
+
+    .show {
+        transform: translateX(0);
+    }
+
+    .sideBar__header {
+       display: flex;
+       justify-content: space-between;
+       margin: 3rem 3rem;
+    }
+
+    .close {
+        display: block;
+    }
+
+    .sideBar__navs {
+        padding-top: 7rem;
     }
 }
     
