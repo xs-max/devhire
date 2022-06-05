@@ -32,7 +32,7 @@
 }
 
 .bg__grey {
-    background: var(--color-grey-light);
+    background: var(--color-grey);
 }
 
 .currencyOption__currency_flag p {
