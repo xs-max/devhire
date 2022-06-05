@@ -1,15 +1,13 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { PuffLoader } from 'react-spinners';
 import numeral from "numeral";
 import DevCard from '../../Components/Common/DevCard';
 import classes from './Home.module.css'
-import { makeDevFavorite } from '../../Store/slices/developersSlice';
 
 const Home = () => {
 
-    const dispatch = useDispatch();
     const {loading, developers, favorites} = useSelector(state => state.developer);
     const { currentCurrency, rate } = useSelector(state => state.currency);
 
@@ -17,9 +15,7 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, [])
   
-    const makeFavorite = (dev) => {
-        dispatch(makeDevFavorite({dev}))
-    }
+    
 
   return (
     <div className={classes.home}>
@@ -32,7 +28,7 @@ const Home = () => {
                   :
                     developers.map((item, index) => (
                         <div key={index} className={classes.home__developers_card}>
-                            <DevCard id={item.profile_id} avatar={item.avatar} cover={item.service_photo} name={item.display_name} price={numeral(+item.starting_from * (rate || 1)).format('0,0.00')} isFavorite={favorites.includes(item.profile_id) ? true : false} currency={currentCurrency?.symbol} makeFavorites={makeFavorite} />
+                            <DevCard id={item.profile_id} avatar={item.avatar} cover={item.service_photo} name={item.display_name} price={numeral(+item.starting_from * (rate || 1)).format('0,0.00')} isFavorite={favorites.includes(item.profile_id) ? true : false} currency={currentCurrency?.symbol} />
                         </div>
                     ))}
               </div>
