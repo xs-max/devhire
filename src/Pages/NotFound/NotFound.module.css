@@ -5,12 +5,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 2rem;
 }
 
 .notFound h1 {
     font-style: normal;
     font-weight: 700;
-    font-size: 3.2rem;
+    font-size: 3rem;
     line-height: 3.4rem;
     letter-spacing: .1rem;
     color: var(--color-dark-1);
@@ -36,4 +37,11 @@
 .notFound__link:hover {
     color: var(--color-white);
     background: var(--color-primary);
+}
+
+@media only screen and (max-width: 600px) {
+    .notFound h1 {
+        font-size: 2.8rem;
+        line-height: 2.5rem;
+    }
 }
